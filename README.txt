@@ -1,3 +1,25 @@
+= Springnote Resources
+
+* Homepage: http://deepblue.springnote.com/pages/391111
+* Author: Bryan Kang (http://myruby.net)
+
+== DESCRIPTIONS:
+
+ActiveResource wrapper library for Springnote.com's REST API
+
+== REQUIREMENTS:
+
+* activesupport
+* activeresource
+
+== INSTALL:
+
+* sudo gem install springnote_resources
+
+== LICENSE:
+
+(The MIT License)
+
 Copyright (c) 2007 Bryan Kang
 
 Permission is hereby granted, free of charge, to any person obtaining
