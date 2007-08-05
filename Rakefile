@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'hoe'
-require File.dirname(__FILE__) + '/lib/springnote'
+require File.dirname(__FILE__) + '/lib/springnote_resources'
 
 Hoe.new("springnote_resources", Springnote::VERSION) do |p|
   p.rubyforge_name = "springnote"
