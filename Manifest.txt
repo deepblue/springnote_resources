@@ -3,7 +3,7 @@ Manifest.txt
 README.txt
 Rakefile
 Todo.txt
-lib/springnote.rb
+lib/springnote_resources.rb
 lib/springnote/base.rb
 lib/springnote/configuration.rb
 lib/springnote/lock.rb
