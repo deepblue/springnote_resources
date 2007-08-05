@@ -1,5 +1,5 @@
 module Springnote
-  VERSION = "0.2"
+  VERSION = "0.2.1"
   
   class Base < ActiveResource::Base
     set_primary_key 'identifier'
