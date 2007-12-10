@@ -14,5 +14,7 @@ end
 require 'springnote/configuration'
 require 'springnote/base'
 require 'springnote/page'
+require 'springnote/attachment'
 require 'springnote/lock'
 require 'springnote/revision'
+
