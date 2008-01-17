@@ -15,7 +15,7 @@ module CommonParameters
   
   def common_params
     self.class.common_params
-  end
+  end  
 end
 
 ActiveResource::Connection.send :include, CommonParameters
