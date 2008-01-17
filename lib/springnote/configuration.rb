@@ -9,9 +9,13 @@ module Springnote
     
     SERVER_PROTOCOL = 'https'
     SERVER_URL = "api.springnote.com"
+    SERVER_PORT = 80
+    #SERVER_PROTOCOL = 'http'
+    #SERVER_URL = 'api.local.host'
+    #SERVER_PORT = 3000
 
     def site
-      "#{SERVER_PROTOCOL}://#{username}:#{password}@#{SERVER_URL}/"
+      "#{SERVER_PROTOCOL}://#{username}:#{password}@#{SERVER_URL}:#{SERVER_PORT}/"
     end
     
     def load(file)

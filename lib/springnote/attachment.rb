@@ -3,10 +3,9 @@ module Springnote
     set_prefix      '/pages/:relation_is_part_of/'
     
     def source
-      springnote_url = URI.parse(self.site)
-      http = Net::HTTP.new(springnote_url.host, springnote_url.port)
-      req = Net::HTTP::Get.new("/pages/#{relation_is_part_of}/attachments/#{self.id}")
-      req.basic_auth(self.site.user, self.site.password)
+      http = Net::HTTP.new(Springnote::Configuration::SERVER_URL, Springnote::Configuration::SERVER_PORT)
+      req = Net::HTTP::Get.new(element_path[0..(element_path.rindex('.xml') -1)])
+      req.basic_auth(Springnote::Base.site.user, Springnote::Base.site.password)
       response = http.request(req)
       response.body
     end
