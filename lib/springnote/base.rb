@@ -2,6 +2,8 @@ module Springnote
   VERSION = "0.3"
   
   class Base < ActiveResource::Base
+    extend ActiveResourceExtension
+    
     set_primary_key 'identifier'
     
     def id

@@ -1,6 +1,4 @@
-class Springnote::Page < Springnote::Base
-  extend ActiveResourceExtension
-  
+class Springnote::Page < Springnote::Base  
   def self.with_tags(tags, params = {})
     find(:all, :params => prarams.reverse_merge(:tags => tags))
   end
