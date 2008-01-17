@@ -1,7 +1,7 @@
 = Springnote Resources
 
 * Homepage: http://myruby.net/pages/391111
-* Author: Bryan Kang (http://myruby.net)
+* Author: Bryan Kang (http://myruby.net), Changshin Lee (http://www.iasandcb.pe.kr)
 
 == DESCRIPTIONS:
 
@@ -19,14 +19,14 @@ ActiveResource wrapper library for Springnote.com's REST API
 == How to get keys
 
 1. You need to register your application on Openmaru API Center and 
-get the application key. read http://dev.springnote.com/pages/438963 
-for detailed informations
+get the application key. Read http://dev.springnote.com/pages/438963 
+for more details.
 
-2. And now you need to get the user key for the application you registered.
-Read http://dev.springnote.com/pages/438944 for detailed informations.
+2. Now you need to get the user key for the application you registered.
+Read http://dev.springnote.com/pages/438944 for more details.
 
-3. You have users OpenID, user key, application key. Configure SpringnoteResources 
-with these informations like following code:
+3. You have user OpenID, user key, and application key. Configure SpringnoteResources 
+with the information like following code:
 
 Springnote::Base.configuration.set :app_key => '__ApplicationKey_Here__',
   :user_openid => 'http://user-open-id-url/',
@@ -34,7 +34,7 @@ Springnote::Base.configuration.set :app_key => '__ApplicationKey_Here__',
 
 == USAGE:
 
-# Loding a page
+# Load a page
 page = Springnote::Page.find(144)
 puts page.source
 
@@ -43,7 +43,7 @@ page = Springnote::Page.find(144)
 page.source = '<p>New Contents</p>'
 page.save
 
-# Create new page
+# Create a new page
 page = Springnote::Page.create :title => 'NewName', :source => 'NewContents'
 
 # Destroy the page
@@ -53,7 +53,7 @@ Springnote::Page.find(144).destroy
 
 (The MIT License)
 
-Copyright (c) 2007 Bryan Kang
+Copyright (c) 2007 Bryan Kang and Changshin Lee
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
