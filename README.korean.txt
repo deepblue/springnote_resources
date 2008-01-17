@@ -1,7 +1,7 @@
 = Springnote Resources
 
 * 홈페이지: http://myruby.net/pages/391111
-* 제작자: deepblue (http://myruby.net)
+* 제작자: deepblue (http://myruby.net), Changshin Lee (http://www.iasandcb.pe.kr)
 
 == 설명:
 
@@ -53,7 +53,7 @@ Springnote::Page.find(144).destroy
 
 (The MIT License)
 
-Copyright (c) 2007 Bryan Kang
+Copyright (c) 2007 Bryan Kang and Changshin Lee
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

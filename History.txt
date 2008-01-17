@@ -1,8 +1,9 @@
-== SVN
+== 0.4
 * ActiveResourceExtension added.
-* query pages with multiple identifiers
-* CommonParameters added. Now you can configure domain 
-  with CommonParametersExtension
+* query pages with multiple identifiers.
+* CommonParameters added. Now you can configure domain.
+  with CommonParametersExtension.
+* Attachment has source method.
 
 == 0.3 / 2007-12-10
 * Page get search, with_tags methods.
