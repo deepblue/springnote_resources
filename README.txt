@@ -1,7 +1,7 @@
 = Springnote Resources
 
 * Homepage: http://myruby.net/pages/391111
-* Author: Bryan Kang (http://myruby.net), Changshin Lee (http://www.iasandcb.pe.kr)
+* Author: Bryan Kang (http://myruby.net) and Changshin Lee (http://www.iasandcb.pe.kr)
 
 == DESCRIPTIONS:
 
