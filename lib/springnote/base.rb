@@ -1,5 +1,5 @@
 module Springnote
-  VERSION = "0.3"
+  VERSION = "0.4"
   
   class Base < ActiveResource::Base
     extend ActiveResourceExtension
