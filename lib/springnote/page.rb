@@ -1,22 +1,21 @@
-module Springnote
-  class Page < Base
-    def self.with_tags(tags)
-      find(:all, :params => {:tags => tags})
-    end
+require 'active_resource_extension'
+
+class Springnote::Page < Springnote::Base
+  extend ActiveResourceExtension
   
-    def self.search(query)
-      find(:all, :params => {:q => query})
-    rescue RuntimeError
-      # empty elements result causes error in typecast_xml_value because of xmlns of springnote
-      []
-    end
-  
-    def lock
-      Lock.find(:relation_is_part_of => self.id)
-    end
-  
-    def attachments
-      Attachment.find(:all, :params => {:relation_is_part_of => self.id})
-    end
+  def self.with_tags(tags, params = {})
+    find(:all, :params => prarams.reverse_merge(:tags => tags))
   end
-end # module Springnote
+
+  def self.search(query, params = {})
+    find(:all, :params => params.reverse_merge(:q => query))
+  end
+  
+  def lock
+    @lock ||= Lock.find(:relation_is_part_of => self.id)
+  end
+
+  def attachments
+    @attachments ||= Attachment.find(:all, :params => {:relation_is_part_of => self.id})
+  end
+end

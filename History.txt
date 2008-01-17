@@ -1,3 +1,7 @@
+== SVN
+* ActiveResourceExtension added.
+* query pages with multiple identifiers
+
 == 0.3 / 2007-12-10
 * Page get search, with_tags methods.
 * protocol can be changed.
