@@ -11,7 +11,7 @@ module Springnote
     SERVER_URL = "api.springnote.com"
 
     def site
-      "#{SERVER_PROTOCOL}://#{username}:#{password}@#{SERVER_URL}:#{SERVER_PORT}/"
+      "#{SERVER_PROTOCOL}://#{username}:#{password}@#{SERVER_URL}/"
     end
     
     def load(file)
