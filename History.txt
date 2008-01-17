@@ -1,6 +1,8 @@
 == SVN
 * ActiveResourceExtension added.
 * query pages with multiple identifiers
+* CommonParameters added. Now you can configure domain 
+  with CommonParametersExtension
 
 == 0.3 / 2007-12-10
 * Page get search, with_tags methods.

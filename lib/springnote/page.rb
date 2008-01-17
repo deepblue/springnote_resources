@@ -1,5 +1,3 @@
-require 'active_resource_extension'
-
 class Springnote::Page < Springnote::Base
   extend ActiveResourceExtension
   

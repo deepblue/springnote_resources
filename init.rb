@@ -1,0 +1,1 @@
+require 'springnote_resources'

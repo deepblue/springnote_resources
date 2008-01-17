@@ -1,52 +1,52 @@
 = Springnote Resources
 
-* Homepage: http://myruby.net/pages/391111
-* Author: Bryan Kang (http://myruby.net)
+* 홈페이지: http://myruby.net/pages/391111
+* 제작자: deepblue (http://myruby.net)
 
-== DESCRIPTIONS:
+== 설명:
 
-ActiveResource wrapper library for Springnote.com's REST API
+스프링노트는 REST API를 제공하며, 레일스 프로젝트의 일부인 REST 클라이언트 '액티브리소스(ActiveResource)'를 통해 
+매우 쉽게 접근할 수 있다. 이를 활용하면, 자신의 데이터베이스에서 ORM인 액티브레코드를 이용해 데이터를 읽고 쓰는 것처럼, 액티브리소스를 
+이용해 스프링노트에 있는 데이터를 쉽게 다룰 수 있다.
 
-== REQUIREMENTS:
+== 요구사항:
 
 * activesupport
 * activeresource
 
-== INSTALL:
+== 설치:
 
 * sudo gem install springnote_resources
 
-== How to get keys
+== 개발자키와 사용자키 발급 및 설정:
 
-1. You need to register your application on Openmaru API Center and 
-get the application key. read http://dev.springnote.com/pages/438963 
-for detailed informations
+1. 스프링노트 매시업을 작성하기 위해서는 먼저 개발자키가 필요하다. 이 키는 오픈마루 API 센터에서 발급받을 수 있다. 
+자세한 내용은 http://dev.springnote.com/pages/372760 에서 얻을 수 있다.
 
-2. And now you need to get the user key for the application you registered.
-Read http://dev.springnote.com/pages/438944 for detailed informations.
+2. 그리고 해당 개발자키에 대한 스프링노트 사용자키를 발급받아야 한다. 이 키 또한 API 센터에서 얻을 수 있다.
+자세한 내용은 http://dev.springnote.com/pages/372761에서 얻을 수 있다.
 
-3. You have users OpenID, user key, application key. Configure SpringnoteResources 
-with these informations like following code:
+3. 이렇게 받은 키를 스프링노트 리소스에서 사용하려면 아래처럼 설정한다.
 
-Springnote::Base.configuration.set :app_key => '__ApplicationKey_Here__',
+Springnote::Base.configuration.set :app_key => '__개발자키__',
   :user_openid => 'http://user-open-id-url/',
-  :user_key => '__UserKey_Here__'
+  :user_key => '__사용자키__'
 
-== USAGE:
+== 사용법:
 
-# Loding a page
+# 페이지 불러오기
 page = Springnote::Page.find(144)
 puts page.source
 
-# Update the page
+# 페이지 수정하기
 page = Springnote::Page.find(144)
 page.source = '<p>New Contents</p>'
 page.save
 
-# Create new page
+# 페이지 만들기
 page = Springnote::Page.create :title => 'NewName', :source => 'NewContents'
 
-# Destroy the page
+# 페이지 지우기
 Springnote::Page.find(144).destroy
 
 == LICENSE:

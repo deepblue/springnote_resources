@@ -11,6 +11,11 @@ unless defined?(ActiveResource)
   end
 end
 
+# extend activeresource
+require 'exts/common_parameters'
+require 'exts/active_resource_extension'
+
+# Springnote's resources
 require 'springnote/configuration'
 require 'springnote/base'
 require 'springnote/page'

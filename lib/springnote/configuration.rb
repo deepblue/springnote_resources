@@ -5,6 +5,8 @@ module Springnote
   
   class Configuration
     attr_writer :app_key, :user_key, :user_openid
+    attr_reader :domain
+    
     SERVER_PROTOCOL = 'https'
     SERVER_URL = "api.springnote.com"
 
@@ -16,7 +18,7 @@ module Springnote
       set YAML.load(File.read(file))
     end
         
-    def set(options)
+    def set(options = {})
       options.each{|k,v| self.send("#{k}=", v)}
       Springnote::Base.site = self.site
       self
@@ -32,6 +34,10 @@ module Springnote
     
     def app_key
       @app_key or raise MissingConfiguration
+    end
+    
+    def domain=(name = nil)
+      ActiveResource::Connection.common_params[:_domain] = name
     end
   end
 end # module Springnote
