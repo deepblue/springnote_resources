@@ -7,7 +7,7 @@ unless defined?(ActiveResource)
     require 'active_resource'  
   rescue LoadError
     require 'rubygems'
-    gem 'activeresource'
+    require 'activeresource'
   end
 end
 
