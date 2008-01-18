@@ -1,4 +1,13 @@
-== 0.4
+== SVN
+* ImportFile module was inclueded by File and Attachment. You can use like following code:
+
+  page = Springnote::Page.import_file(path)
+  attachment = Springnote::Attachment.import_file(path, :relation_is_part_of => page.id)
+
+== 0.4.1 / 2008-1-19
+* common parameter's name was changed from _domain to domain(without underbar).
+
+== 0.4 / 2008-1-18
 * ActiveResourceExtension added.
 * query pages with multiple identifiers.
 * CommonParameters added. Now you can configure domain.
@@ -8,14 +17,14 @@
 == 0.3 / 2007-12-10
 * Page get search, with_tags methods.
 * protocol can be changed.
-* Attachment resource added
-* PageImport added
+* Attachment resource added.
+* PageImport added.
 
 == 0.2.1 / 2007-8-6
-* tiny naming fix for rubygems
+* tiny naming fix for rubygems.
 
 == 0.2 / 2007-7-30
-* Public Release
+* Public Release.
 
 == 0.1  / 2007-07-01
-* Openmaru Devday Release
+* Openmaru Devday Release.

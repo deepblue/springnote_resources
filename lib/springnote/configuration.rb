@@ -37,7 +37,7 @@ module Springnote
     end
     
     def domain=(name = nil)
-      ActiveResource::Connection.common_params[:_domain] = name
+      ActiveResource::Connection.common_params[:domain] = name
     end
   end
 end # module Springnote

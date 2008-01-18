@@ -18,8 +18,9 @@ require 'exts/active_resource_extension'
 # Springnote's resources
 require 'springnote/configuration'
 require 'springnote/base'
+require 'springnote/import_file'
+
 require 'springnote/page'
 require 'springnote/attachment'
 require 'springnote/lock'
 require 'springnote/revision'
-

@@ -1,9 +1,9 @@
-module Springnote::PageImport
+module Springnote::ImportFile
   BOUNDARY = 'AaB03x'
   
   module ClassMethod
-    def import_file(path)
-      new.import_file(path)
+    def import_file(path, opts = {})
+      new(opts).import_file(path)
     end  
   end
 
@@ -16,7 +16,7 @@ module Springnote::PageImport
       'Content-Type' => "multipart/form-data; boundary=#{BOUNDARY}"
 
     returning connection.post(collection_path, body, headers) do |response|
-      self.id = id_from_response(response)
+      # self.id = id_from_response(response)
       load_attributes_from_response(response)
     end
     self      
@@ -25,7 +25,6 @@ module Springnote::PageImport
   def self.included(base)
     base.extend(ClassMethod)
   end
-  
 
 protected
   # COPY from ruby/facets 1.8.54
@@ -55,5 +54,3 @@ protected
     }.join('') + "--#{boundary}--\r\n"
   end  
 end
-
-Springnote::Page.send :include, Springnote::PageImport
