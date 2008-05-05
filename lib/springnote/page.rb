@@ -2,7 +2,7 @@ class Springnote::Page < Springnote::Base
   include Springnote::ImportFile
   
   def self.with_tags(tags, params = {})
-    find(:all, :params => prarams.reverse_merge(:tags => tags))
+    find(:all, :params => params.reverse_merge(:tags => tags))
   end
 
   def self.search(query, params = {})

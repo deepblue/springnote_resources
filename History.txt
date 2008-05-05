@@ -1,4 +1,7 @@
-== SVN
+== 0.5.1 / 2008-4-8
+* protocol configuration added.
+
+== 0.5 / 2008-1-21
 * ImportFile module was inclueded by File and Attachment. You can use like following code:
 
   page = Springnote::Page.import_file(path)

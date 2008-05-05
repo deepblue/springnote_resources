@@ -4,14 +4,17 @@ module Springnote
   class MissingConfiguration < RuntimeError; end
   
   class Configuration
-    attr_writer :app_key, :user_key, :user_openid
+    attr_writer :app_key, :user_key, :user_openid, :protocol
     attr_reader :domain
     
-    SERVER_PROTOCOL = 'https'
     SERVER_URL = "api.springnote.com"
+    
+    def protocol
+      @protocol || 'https'
+    end
 
     def site
-      "#{SERVER_PROTOCOL}://#{username}:#{password}@#{SERVER_URL}/"
+      "#{protocol}://#{username}:#{password}@#{SERVER_URL}/"
     end
     
     def load(file)
