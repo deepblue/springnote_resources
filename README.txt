@@ -1,7 +1,7 @@
 = Springnote Resources
 
 * Homepage: http://myruby.net/pages/391111
-* Author: Bryan Kang (http://myruby.net) and Changshin Lee (http://www.iasandcb.pe.kr)
+* Author: deepblue (http://myruby.net) and Changshin Lee (http://www.iasandcb.pe.kr)
 
 == DESCRIPTIONS:
 
@@ -20,19 +20,19 @@ ActiveResource wrapper library for Springnote.com's REST API
 
 == How to get keys
 
-1. You need to register your application on Openmaru API Center and 
-get the application key. Read http://dev.springnote.com/pages/438963 
+1. You need to register your application on Openmaru API Center(https://api.openmaru.com/oauth/new) and 
+get the consumer token. Read http://dev.springnote.com/pages/438963 
 for more details.
 
-2. Now you need to get the user key for the application you registered.
-Read http://dev.springnote.com/pages/438944 for more details.
+2. Now you need to get the access token for the application you registered.
+Read the OAuth tutorial for more details.
 
-3. You have user OpenID, user key, and application key. Configure SpringnoteResources 
-with the information like following code:
+3. You have two tokens. Configure SpringnoteResources with the information 
+like following code:
 
-Springnote::Base.configuration.set :app_key => '__ApplicationKey_Here__',
-  :user_openid => 'http://user-open-id-url/',
-  :user_key => '__UserKey_Here__'
+Springnote::Base.configuration.set :consumer_token => 'CK', :consumer_secret => 'CS',
+  :access_token => 'AK', :access_secret => 'AS',
+  :domain => 'notename'
 
 == USAGE:
 

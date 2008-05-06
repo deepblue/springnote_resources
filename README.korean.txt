@@ -22,17 +22,16 @@
 
 == 개발자키와 사용자키 발급 및 설정:
 
-1. 스프링노트 매시업을 작성하기 위해서는 먼저 개발자키가 필요하다. 이 키는 오픈마루 API 센터에서 발급받을 수 있다. 
-자세한 내용은 http://dev.springnote.com/pages/372760 에서 얻을 수 있다.
+1. 스프링노트 매시업을 작성하기 위해서는 먼저 컨슈머 토큰이 필요하다. 이 키는 오픈마루 API 센터(https://api.openmaru.com/oauth/new)에서 발급받을 수 있다. 
+자세한 내용은 http://dev.springnote.com/pages/1083036 에서 얻을 수 있다.
 
-2. 그리고 해당 개발자키에 대한 스프링노트 사용자키를 발급받아야 한다. 이 키 또한 API 센터에서 얻을 수 있다.
-자세한 내용은 http://dev.springnote.com/pages/372761에서 얻을 수 있다.
+2. 그리고 액세스 토큰을 발급받아야 한다.자세한 방법은 OAuth 튜토리얼을 참고하기 바란다. http://myruby.net/pages/1154148
 
 3. 이렇게 받은 키를 스프링노트 리소스에서 사용하려면 아래처럼 설정한다.
 
-Springnote::Base.configuration.set :app_key => '__개발자키__',
-  :user_openid => 'http://user-open-id-url/',
-  :user_key => '__사용자키__'
+Springnote::Base.configuration.set :consumer_token => 'CK', :consumer_secret => 'CS',
+  :access_token => 'AK', :access_secret => 'AS',
+  :domain => 'notename'
 
 == 사용법:
 
