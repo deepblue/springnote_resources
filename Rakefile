@@ -11,6 +11,7 @@ Hoe.new("springnote_resources", Springnote::VERSION) do |p|
   p.email = 'byblue@gmail.com'
   p.changes = p.paragraphs_of('History.txt', 0..1).join("\n\n")
   p.need_zip = true
+  p.extra_deps = %w(activeresource) # ruby-hmac oauth
 end
 
 task :update_manifest do

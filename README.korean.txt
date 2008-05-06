@@ -13,6 +13,8 @@
 
 * activesupport
 * activeresource
+* oauth
+* ruby-hmac
 
 == 설치:
 

@@ -1,3 +1,6 @@
+== 0.6.0 / 2008-5-6
+* Support OAuth protocol. Old authententication method will be removed very soon. You should set access_token, access_token_secret, consumer_token, consumer_secret instead of app_key, user_openid, user_key
+
 == 0.5.1 / 2008-4-8
 * protocol configuration added.
 

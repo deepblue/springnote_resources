@@ -11,6 +11,8 @@ ActiveResource wrapper library for Springnote.com's REST API
 
 * activesupport
 * activeresource
+* oauth
+* ruby-hmac
 
 == INSTALL:
 
