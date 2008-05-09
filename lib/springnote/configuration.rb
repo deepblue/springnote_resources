@@ -17,8 +17,12 @@ module Springnote
     def load(file)
       set YAML.load(File.read(file))
     end
-        
+            
     def set(options = {})
+      #reset
+      @token = nil
+      @consumer = nil
+
       options.each{|k,v| self.send("#{k}=", v)}
       Springnote::Base.site = self.site
       self
@@ -35,7 +39,7 @@ module Springnote
     end
     
     def token
-      @token ||= OAuth::Token.new @access_token, @access_secret if @access_token && @access_secret
+      @token ||= OAuth::AccessToken.new consumer, @access_token, @access_secret if @access_token && @access_secret
     end
     
     def consumer
