@@ -9,6 +9,7 @@ lib/springnote_resources.rb
 lib/springnote/attachment.rb
 lib/springnote/base.rb
 lib/springnote/configuration.rb
+lib/springnote/comment.rb
 lib/springnote/lock.rb
 lib/springnote/page.rb
 lib/springnote/import_file.rb
