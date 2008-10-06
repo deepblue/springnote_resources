@@ -8,7 +8,8 @@ module Springnote
     attr_accessor :access_token,   :access_secret
     attr_accessor :protocol, :domain
     
-    SERVER_URL = "api.springnote.com"
+    # SERVER_URL = "api.springnote.com"
+    SERVER_URL = "api.w3pad.com"
     
     def protocol
       @protocol || 'http'

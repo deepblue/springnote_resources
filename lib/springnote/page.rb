@@ -10,10 +10,14 @@ class Springnote::Page < Springnote::Base
   end
   
   def lock
-    @lock ||= Lock.find(:relation_is_part_of => self.id)
+    @lock ||= Springnote::Lock.find(:relation_is_part_of => self.id)
   end
 
   def attachments
-    @attachments ||= Attachment.find(:all, :params => {:relation_is_part_of => self.id})
+    @attachments ||= Springnote::Attachment.find(:all, :params => {:relation_is_part_of => self.id})
+  end
+  
+  def comments
+    @comments ||= Springnote::Comment.find(:all, :params => {:relation_is_part_of => self.id})
   end
 end

@@ -22,8 +22,9 @@ module RequestWithOauth
     logger.debug "(request with oauth)" if logger
     @http = http
 
-    req = create_http_request(method, path, arguments)
+    req = create_http_request(method, path, *arguments)
     req.oauth! @http, oauth_configuration.consumer, oauth_configuration.token, :signature_method => 'HMAC-SHA1', :clobber_request => true
+    # logger.debug req.to_hash
 
     @http.request(req)
   end

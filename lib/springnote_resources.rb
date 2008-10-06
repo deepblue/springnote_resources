@@ -15,8 +15,8 @@ unless defined?(ActiveResource)
 end
 
 # extend activeresource
-require 'exts/request_with_oauth'
 require 'exts/common_parameters'
+require 'exts/request_with_oauth'
 require 'exts/active_resource_extension'
 
 # Springnote's resources
@@ -24,9 +24,10 @@ require 'springnote/configuration'
 require 'springnote/base'
 require 'springnote/import_file'
 
-require 'springnote/page'
 require 'springnote/attachment'
 require 'springnote/lock'
 require 'springnote/revision'
+require 'springnote/comment'
+require 'springnote/page'
 
 ActiveResource::Connection.oauth_configuration = Springnote::Base.configuration
