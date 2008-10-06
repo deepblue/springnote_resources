@@ -1,3 +1,6 @@
+== 0.6.5 / 2008-10-6
+ * Springnote::Comment added
+
 == 0.6.1 / 2008-5-9
  * bugfix for OAuth consumer(POST request does not be sent).
 
