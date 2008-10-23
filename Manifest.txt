@@ -15,7 +15,6 @@ lib/springnote/page.rb
 lib/springnote/import_file.rb
 lib/springnote/revision.rb
 lib/exts/active_resource_extension.rb
-lib/exts/common_parameters.rb
 lib/exts/request_with_oauth.rb
 spec/base_spec.rb
 spec/configuration_spec.rb

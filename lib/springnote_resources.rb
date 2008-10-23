@@ -15,7 +15,6 @@ unless defined?(ActiveResource)
 end
 
 # extend activeresource
-require 'exts/common_parameters'
 require 'exts/request_with_oauth'
 require 'exts/active_resource_extension'
 

@@ -25,6 +25,10 @@ module Springnote
 
       options.each{|k,v| self.send("#{k}=", v)}
       Springnote::Base.site = self.site
+      if @app_key && Springnote::Base.respond_to?(:user=)
+        Springnote::Base.user = self.username
+        Springnote::Base.password = self.password
+      end
       self
     end
         

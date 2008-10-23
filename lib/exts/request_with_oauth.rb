@@ -1,17 +1,32 @@
 module RequestWithOauth
   def self.included(mod)
+    mod.send :cattr_accessor, :common_params
+    mod.common_params = {}
+    
     mod.alias_method_chain :request, :oauth
-    mod.send :cattr_accessor, :oauth_configuration
+    mod.send :cattr_accessor, :oauth_configuration    
   end
+  
+  def common_params
+    self.class.common_params
+  end 
   
   delegate :oauth_configuration, :to => "self.class"
     
   def request_with_oauth(method, path, *arguments)
+    # append common parameters
+    unless common_params.empty?
+      path += path.include?('?') ? '&' : '?'
+      path += common_params.to_query
+    end
+    
     logger.info "#{method.to_s.upcase} #{site.scheme}://#{site.host}:#{site.port}#{path}" if logger
     result = nil
     time = Benchmark.realtime { result = http_request(method, path, arguments) }
-    logger.info "--> #{result.code} #{result.message} (#{result.body ? result.body : 0}b %.2fs)" % time if logger
+    logger.info "--> #{result.code} #{result.message} (#{result.body ? result.body.length : 0}b %.2fs)" % time if logger
     handle_response(result)
+  rescue Timeout::Error => e
+    raise TimeoutError.new(e.message)
   end
   
   def http_request(method, path, arguments)
