@@ -21,7 +21,7 @@ module Springnote
     end
     
     def server_host
-      @server_host
+      @server_host || "api.openmaru.com"
     end
     
     def server_port=(port)
